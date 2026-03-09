@@ -91,8 +91,8 @@ if __name__ == "__main__":
     subject = "Nieuwe huurwoningen gevonden!"
 
     sender = "verawandel9@gmail.com"
-    #recipients = ["verawandel@gmail.com", "larsvanoostrum1@gmail.com"]
-    recipients = ["verawandel@gmail.com"]
+    recipients = ["verawandel@gmail.com", "larsvanoostrum1@gmail.com"]
+    #recipients = ["verawandel@gmail.com"]
     load_dotenv()
     password = os.getenv("EMAIL_PASSWORD")
 
