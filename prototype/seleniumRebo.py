@@ -34,6 +34,7 @@ def get_rebo_listings():
     plaats_filter = wait.until(
         EC.element_to_be_clickable((By.XPATH, "//span[text()='Plaats']"))
     )
+
     plaats_filter.click()
 
     # click Arnhem
@@ -41,6 +42,13 @@ def get_rebo_listings():
         EC.element_to_be_clickable((By.XPATH, "//button[contains(., 'Arnhem')]"))
     )
     arnhem_button.click()
+
+    # Wait until the Arnhem button is selected / active
+    wait.until(
+        EC.presence_of_element_located(
+            (By.XPATH, "//button[contains(@class,'selected') and contains(., 'Arnhem')]")
+        )
+    )
 
     # wait until listings appear
     wait.until(
@@ -63,7 +71,6 @@ def get_rebo_listings():
             else:
                 price = price_text
             element_list.append({"title": title, "price": price, "url": link})
-
         except Exception as e:
             print("Error:", e)
 
