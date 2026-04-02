@@ -11,7 +11,7 @@ from dotenv import load_dotenv
 def collect_all_listings():
     return {
         "Funda": get_funda_listings(),
-        "Pararius": get_pararius_listings(),
+        # "Pararius": get_pararius_listings(),
         "Rebo": get_rebo_listings(),
         "Nederwoon": get_nederwoon_listings(),
     }
