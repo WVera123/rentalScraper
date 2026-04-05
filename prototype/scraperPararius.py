@@ -1,5 +1,6 @@
 from pypararius import Pararius
 
+
 def get_pararius_listings():
     p = Pararius()
 
@@ -31,8 +32,10 @@ def get_pararius_listings():
             title = r["title"]
             price = r["price"]
             neighbourhood = r.get("neighbourhood", "")
-
-            price_formatted = f"€ {price:,}".replace(",", ".")
+            if price is None:
+                price_formatted = "Unknown price"
+            else:
+                price_formatted = f"€ {price:,}".replace(",", ".")
 
             listings.append({
                 "title": title,
